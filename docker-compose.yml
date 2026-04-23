@@ -96,6 +96,8 @@ services:
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
       - caddy-data:/data
+    environment:
+      DOMAIN: ${DOMAIN:-localhost}
     restart: always
     depends_on:
       - oauth2-proxy
